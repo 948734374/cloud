@@ -7,11 +7,11 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class DemoApplication {
+public class ZookserApplication {
 
 	public static void main(String[] args) {
 		try {
-			SpringApplication.run(DemoApplication.class, args);
+			SpringApplication.run(ZookserApplication.class, args);
 			System.out.println("Server startup done.");
 		}catch (Exception e){
 			System.out.println("Server startup fail.");

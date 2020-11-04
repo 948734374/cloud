@@ -4,6 +4,7 @@ package com.example.zookser.demo.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +27,9 @@ import java.util.UUID;
 @RestController
 public class TestController {
 
+        @Value("${Mediate.topic}")
+        private  String topic;
+
         @Autowired
         private KafkaTemplate kafkaTemplate;
 
@@ -36,6 +40,7 @@ public class TestController {
 
         @RequestMapping("/test")
         public String test() {
+            System.out.println("topictopictopictopictopictopictopictopictopic"+topic);
             log.info("test :" + INSTANCE_UUID.toString());
             return INSTANCE_UUID.toString();
         }
@@ -43,7 +48,7 @@ public class TestController {
         public void sendTest(String msg) {
             msg = "我家猫是个傻逼吧";
 
-            kafkaTemplate.send("haha", msg);
+            kafkaTemplate.send("test", msg);
         }
 
     }

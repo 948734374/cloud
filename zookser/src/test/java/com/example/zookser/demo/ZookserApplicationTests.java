@@ -1,13 +1,14 @@
-package zookcli.demo;
+package com.example.zookser.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class ZookserApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
